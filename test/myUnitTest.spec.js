@@ -1,6 +1,6 @@
-describe('Calculate whether a number is odd and even', () => {
+describe('Calculate whether a number is odd and even', function() {
     
-        describe('Logic', () => {
+        describe('Logic', function() {
     
             var prefix = 'should mark your number as '
             var testData = [{
@@ -18,13 +18,13 @@ describe('Calculate whether a number is odd and even', () => {
                     expectedResult: 'invalid',
                     label: prefix + 'invalid when xyz'
                 },
-            ]
-    
-            for (var test of testData) {
-                it(test.label, () => {
-                    let result = window.checkOddAndEven(test.input)
-                    expect(result).to.equal(test.expectedResult)
+            ]            
+
+            testData.forEach(test => {               
+                it(test.label, function() {                   
+                    var result = window.checkOddAndEven(test.input)                                 
+                    expect(result).to.equal(test.expectedResult)                    
                 })
-            }
+            })
         })
     })
